@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Gen-Z Mental Health Platform Design System - Vibrant, hopeful, and engaging */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - warm and welcoming */
+    --background: 250 100% 99%;
+    --foreground: 235 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card system - soft and approachable */
+    --card: 250 60% 98%;
+    --card-foreground: 235 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 250 60% 98%;
+    --popover-foreground: 235 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - healing purple/indigo */
+    --primary: 253 91% 67%;
+    --primary-foreground: 250 100% 99%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - calming lavender */
+    --secondary: 267 57% 92%;
+    --secondary-foreground: 253 91% 67%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - soft grays */
+    --muted: 250 20% 95%;
+    --muted-foreground: 235 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - energetic coral */
+    --accent: 14 91% 71%;
+    --accent-foreground: 250 100% 99%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive - gentle warning */
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 250 100% 99%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs */
+    --border: 250 30% 90%;
+    --input: 250 30% 94%;
+    --ring: 253 91% 67%;
 
-    --radius: 0.5rem;
+    /* Hope gradient - signature brand element */
+    --hope-gradient: linear-gradient(135deg, hsl(253 91% 67%), hsl(305 85% 70%), hsl(14 91% 71%));
+    --calm-gradient: linear-gradient(135deg, hsl(267 57% 92%), hsl(219 78% 85%));
+    --energy-gradient: linear-gradient(135deg, hsl(14 91% 71%), hsl(45 90% 70%));
+    
+    /* Mental health mood colors */
+    --happy: 45 90% 70%;
+    --calm: 219 78% 85%;
+    --anxious: 267 57% 80%;
+    --sad: 214 65% 70%;
+    --excited: 14 91% 71%;
+    --overwhelmed: 253 50% 75%;
+
+    /* Animations and shadows */
+    --glow-purple: 0 8px 32px hsl(253 91% 67% / 0.3);
+    --glow-coral: 0 8px 32px hsl(14 91% 71% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +126,109 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero elements with hope gradient */
+  .hero-gradient {
+    background: var(--hope-gradient);
+  }
+  
+  .calm-gradient {
+    background: var(--calm-gradient);
+  }
+  
+  .energy-gradient {
+    background: var(--energy-gradient);
+  }
+
+  /* Floating animations */
+  .float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .bounce-hover {
+    transition: var(--transition-bounce);
+  }
+  
+  .bounce-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Mood colors */
+  .mood-happy {
+    background-color: hsl(var(--happy));
+  }
+  
+  .mood-calm {
+    background-color: hsl(var(--calm));
+  }
+  
+  .mood-anxious {
+    background-color: hsl(var(--anxious));
+  }
+  
+  .mood-sad {
+    background-color: hsl(var(--sad));
+  }
+  
+  .mood-excited {
+    background-color: hsl(var(--excited));
+  }
+  
+  .mood-overwhelmed {
+    background-color: hsl(var(--overwhelmed));
+  }
+
+  /* Privacy badge styles */
+  .privacy-badge {
+    @apply bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-sm font-medium;
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Glass morphism effects */
+  .glass-card {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+  /* Custom keyframe animations */
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: var(--glow-purple);
+      opacity: 1;
+    }
+    50% { 
+      box-shadow: var(--glow-coral);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
   }
 }
