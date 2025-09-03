@@ -10,7 +10,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${morningHero})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-purple-600/70 to-accent/80" />
+      <div className="absolute inset-0 bg-black/20" />
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-20 text-6xl animate-pulse">✨</div>
@@ -21,21 +21,21 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div className="mb-6">
-          <span className="privacy-badge text-white bg-white/20 backdrop-blur">
+          <span className="inline-flex items-center bg-white/90 text-gray-800 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
             <Users className="h-4 w-4 inline mr-2" />
             No one can see who you are. Your feelings here are private forever. 🔐
           </span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
           Your Mental Health
           <br />
-          <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent drop-shadow-lg">
             Matters 💜
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
           Anonymous, safe, and judgment-free mental health support designed for Gen-Z. 
           Get help when you need it, how you need it. ✨
         </p>
@@ -52,17 +52,17 @@ const HeroSection = () => {
 
         {/* Floating Questions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
-          <div className="glass-card p-4 rounded-lg bounce-hover cursor-pointer">
-            <p className="text-white font-medium">Do Insta stories make you feel left out? 🤳</p>
+          <div className="bg-white/90 text-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1">
+            <p className="font-medium">Do Insta stories make you feel left out? 🤳</p>
           </div>
-          <div className="glass-card p-4 rounded-lg bounce-hover cursor-pointer">
-            <p className="text-white font-medium">Feeling FOMO lately? 😰</p>
+          <div className="bg-white/90 text-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1">
+            <p className="font-medium">Feeling FOMO lately? 😰</p>
           </div>
-          <div className="glass-card p-4 rounded-lg bounce-hover cursor-pointer">
-            <p className="text-white font-medium">Do you compare yourself to others? 🪞</p>
+          <div className="bg-white/90 text-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1">
+            <p className="font-medium">Do you compare yourself to others? 🪞</p>
           </div>
-          <div className="glass-card p-4 rounded-lg bounce-hover cursor-pointer">
-            <p className="text-white font-medium">Trouble focusing on studies? 📚</p>
+          <div className="bg-white/90 text-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1">
+            <p className="font-medium">Trouble focusing on studies? 📚</p>
           </div>
         </div>
 
