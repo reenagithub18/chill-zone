@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Heart, Brain, Users } from "lucide-react";
+import trendingBackground from "@/assets/trending-background.jpg";
 
 const trendingTopics = [
   {
@@ -67,16 +68,22 @@ const trendingTopics = [
 
 const TrendingTopics = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${trendingBackground})` }}
+      />
+      <div className="absolute inset-0 bg-white/80" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <TrendingUp className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <TrendingUp className="h-8 w-8 text-purple-600" />
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
               What's Trending in Mental Health 🔥
             </h2>
           </div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real issues Gen-Z is talking about. You're not alone in these struggles - 
             millions are going through the same things ✨
           </p>
@@ -86,7 +93,7 @@ const TrendingTopics = () => {
           {trendingTopics.map((topic) => (
             <Card 
               key={topic.id} 
-              className="bounce-hover cursor-pointer border-2 border-transparent hover:border-primary/20 overflow-hidden group"
+              className="hover:shadow-xl cursor-pointer border-2 border-transparent hover:border-purple-300 overflow-hidden group transition-all duration-300 hover:-translate-y-1 bg-white/95 backdrop-blur"
             >
               <div className={`h-2 bg-gradient-to-r ${topic.color}`} />
               
@@ -100,18 +107,18 @@ const TrendingTopics = () => {
                     <span className="ml-1">{topic.category}</span>
                   </Badge>
                 </div>
-                <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl mb-2 group-hover:text-purple-600 transition-colors">
                   {topic.title}
                 </CardTitle>
               </CardHeader>
               
               <CardContent className="pt-0">
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   {topic.description}
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-primary">
+                  <span className="text-sm font-medium text-purple-600">
                     {topic.stats}
                   </span>
                   <div className="flex gap-1">
@@ -126,10 +133,10 @@ const TrendingTopics = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-gray-600 mb-6">
             Want to talk about any of these? Our AI is here to listen 24/7 🤖💭
           </p>
-          <div className="privacy-badge inline-flex">
+          <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full inline-flex">
             Everything you share is 100% anonymous and confidential 🔐
           </div>
         </div>

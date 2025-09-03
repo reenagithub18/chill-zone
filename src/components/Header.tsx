@@ -6,43 +6,43 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 glass-card border-b border-white/20">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="hero-gradient p-2 rounded-xl float-gentle">
+            <div className="bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-xl">
               <Heart className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-xl font-bold text-gray-800">
                 MindSpace 💜
               </h1>
-              <p className="text-xs text-muted-foreground">You Matter</p>
+              <p className="text-xs text-gray-600">You Matter</p>
             </div>
           </div>
 
           {/* Privacy Badge */}
-          <div className="hidden md:flex items-center gap-2 privacy-badge float-gentle">
+          <div className="hidden md:flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
             <Shield className="h-4 w-4" />
             <span>100% Anonymous & Private 🔐</span>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#home" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#home" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
               Home 🏠
             </a>
-            <a href="#mood" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#mood" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
               Mood Tracker 😊
             </a>
-            <a href="#chat" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#chat" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
               AI Chat 🤖
             </a>
-            <a href="#help" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#help" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
               Get Help 👩‍⚕️
             </a>
-            <Button variant="hero" size="sm" className="pulse-glow">
+            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600" size="sm">
               Start Journey ✨
             </Button>
           </nav>
@@ -58,25 +58,25 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 p-4 rounded-lg glass-card animate-slide-up">
+          <div className="md:hidden mt-4 p-4 rounded-lg bg-white shadow-lg animate-slide-up">
             <div className="flex flex-col gap-4">
-              <div className="privacy-badge text-center">
+              <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium text-center">
                 <Shield className="h-4 w-4 inline mr-2" />
                 100% Anonymous & Private 🔐
               </div>
-              <a href="#home" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="#home" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
                 Home 🏠
               </a>
-              <a href="#mood" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="#mood" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
                 Mood Tracker 😊
               </a>
-              <a href="#chat" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="#chat" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
                 AI Chat 🤖
               </a>
-              <a href="#help" className="text-sm font-medium hover:text-primary transition-colors">
+              <a href="#help" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
                 Get Help 👩‍⚕️
               </a>
-              <Button variant="hero" className="w-full">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 w-full">
                 Start Journey ✨
               </Button>
             </div>

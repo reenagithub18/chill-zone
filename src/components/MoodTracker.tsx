@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Play } from "lucide-react";
+import moodBackground from "@/assets/mood-background.jpg";
 
 interface MoodSuggestion {
   title: string;
@@ -149,13 +150,19 @@ const MoodTracker = () => {
   };
 
   return (
-    <section id="mood" className="py-20 bg-gradient-to-br from-muted/30 to-secondary/20">
-      <div className="container mx-auto px-4">
+    <section id="mood" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${moodBackground})` }}
+      />
+      <div className="absolute inset-0 bg-white/85" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
             How are you feeling today? 💭
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Share your mood and get personalized suggestions to support your mental wellness ✨
           </p>
         </div>
@@ -165,8 +172,7 @@ const MoodTracker = () => {
           {moods.map((mood) => (
             <Button
               key={mood.value}
-              variant="mood"
-              className={`h-24 flex flex-col gap-2 ${selectedMood === mood.value ? 'ring-2 ring-primary scale-105' : ''}`}
+              className={`h-24 flex flex-col gap-2 bg-white hover:bg-purple-50 text-gray-800 border-2 hover:border-purple-300 transition-all duration-300 ${selectedMood === mood.value ? 'ring-2 ring-purple-500 scale-105 bg-purple-100' : ''}`}
               onClick={() => handleMoodSelect(mood.value)}
             >
               <span className="text-3xl hover:animate-bounce">{mood.emoji}</span>
@@ -178,7 +184,7 @@ const MoodTracker = () => {
         {/* Mood Suggestions */}
         {selectedMood && moodSuggestions[selectedMood] && (
           <div className="max-w-4xl mx-auto animate-slide-up">
-            <Card className="glass-card">
+            <Card className="bg-white/95 backdrop-blur shadow-xl border-purple-200">
               <CardHeader>
                 <CardTitle className="text-2xl text-center">
                   Perfect! Here's what might help 🌟
@@ -187,11 +193,11 @@ const MoodTracker = () => {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {moodSuggestions[selectedMood].map((suggestion, index) => (
-                    <Card key={index} className="bounce-hover border-primary/20">
+                    <Card key={index} className="hover:shadow-lg border-purple-200 transition-all duration-300 hover:-translate-y-1 bg-white">
                       <CardContent className="p-6 text-center">
                         <div className="text-4xl mb-4">{suggestion.emoji}</div>
-                        <h3 className="font-semibold text-lg mb-2">{suggestion.title}</h3>
-                        <p className="text-muted-foreground mb-4">{suggestion.description}</p>
+                        <h3 className="font-semibold text-lg mb-2 text-gray-800">{suggestion.title}</h3>
+                        <p className="text-gray-600 mb-4">{suggestion.description}</p>
                         <div className="flex gap-2 justify-center">
                           {suggestion.type === "video" && (
                             <Badge variant="secondary" className="text-xs">
@@ -201,9 +207,8 @@ const MoodTracker = () => {
                           )}
                           <Button 
                             size="sm" 
-                            variant="therapist"
+                            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600"
                             asChild
-                            className="w-full"
                           >
                             <a 
                               href={suggestion.link} 
