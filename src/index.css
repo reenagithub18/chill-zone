@@ -17,21 +17,21 @@
     --popover: 250 60% 98%;
     --popover-foreground: 235 15% 15%;
 
-    /* Primary - healing purple/indigo */
-    --primary: 253 91% 67%;
-    --primary-foreground: 250 100% 99%;
+    /* Primary - fresh morning orange */
+    --primary: 25 95% 65%;
+    --primary-foreground: 25 15% 15%;
 
-    /* Secondary - calming lavender */
-    --secondary: 267 57% 92%;
-    --secondary-foreground: 253 91% 67%;
+    /* Secondary - soft mint green */
+    --secondary: 145 60% 88%;
+    --secondary-foreground: 145 30% 25%;
 
-    /* Muted - soft grays */
-    --muted: 250 20% 95%;
-    --muted-foreground: 235 10% 45%;
+    /* Muted - light morning grays */
+    --muted: 45 25% 94%;
+    --muted-foreground: 45 8% 45%;
 
-    /* Accent - energetic coral */
-    --accent: 14 91% 71%;
-    --accent-foreground: 250 100% 99%;
+    /* Accent - sunrise yellow */
+    --accent: 48 100% 70%;
+    --accent-foreground: 48 15% 15%;
 
     /* Destructive - gentle warning */
     --destructive: 0 70% 65%;
@@ -42,22 +42,22 @@
     --input: 250 30% 94%;
     --ring: 253 91% 67%;
 
-    /* Hope gradient - signature brand element */
-    --hope-gradient: linear-gradient(135deg, hsl(253 91% 67%), hsl(305 85% 70%), hsl(14 91% 71%));
-    --calm-gradient: linear-gradient(135deg, hsl(267 57% 92%), hsl(219 78% 85%));
-    --energy-gradient: linear-gradient(135deg, hsl(14 91% 71%), hsl(45 90% 70%));
+    /* Hope gradient - fresh morning signature element */
+    --hope-gradient: linear-gradient(135deg, hsl(25 95% 65%), hsl(48 100% 70%), hsl(145 60% 70%));
+    --calm-gradient: linear-gradient(135deg, hsl(145 60% 88%), hsl(180 60% 85%));
+    --energy-gradient: linear-gradient(135deg, hsl(48 100% 70%), hsl(25 95% 65%));
     
-    /* Mental health mood colors */
-    --happy: 45 90% 70%;
-    --calm: 219 78% 85%;
-    --anxious: 267 57% 80%;
-    --sad: 214 65% 70%;
-    --excited: 14 91% 71%;
-    --overwhelmed: 253 50% 75%;
+    /* Mental health mood colors - morning fresh */
+    --happy: 48 95% 68%;
+    --calm: 145 55% 75%;
+    --anxious: 180 45% 75%;
+    --sad: 200 50% 70%;
+    --excited: 25 95% 65%;
+    --overwhelmed: 35 60% 70%;
 
-    /* Animations and shadows */
-    --glow-purple: 0 8px 32px hsl(253 91% 67% / 0.3);
-    --glow-coral: 0 8px 32px hsl(14 91% 71% / 0.3);
+    /* Animations and shadows - morning fresh */
+    --glow-orange: 0 8px 32px hsl(25 95% 65% / 0.3);
+    --glow-yellow: 0 8px 32px hsl(48 100% 70% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
@@ -208,11 +208,11 @@
   
   @keyframes pulse-glow {
     0%, 100% { 
-      box-shadow: var(--glow-purple);
+      box-shadow: var(--glow-orange);
       opacity: 1;
     }
     50% { 
-      box-shadow: var(--glow-coral);
+      box-shadow: var(--glow-yellow);
       opacity: 0.8;
     }
   }

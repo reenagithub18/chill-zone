@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Sparkles, Users } from "lucide-react";
-import heroStudents from "@/assets/hero-students.jpg";
+import morningHero from "@/assets/morning-hero.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroStudents})` }}
+        style={{ backgroundImage: `url(${morningHero})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-purple-600/70 to-accent/80" />
       
