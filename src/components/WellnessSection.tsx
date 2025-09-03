@@ -5,6 +5,7 @@ import { ExternalLink, Play } from "lucide-react";
 import yogaImage from "@/assets/yoga.jpg";
 import meditationImage from "@/assets/meditation.jpg";
 import healthyFoodImage from "@/assets/healthy-food.jpg";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const wellnessActivities = [
   {
@@ -46,6 +47,9 @@ const wellnessActivities = [
 ];
 
 const WellnessSection = () => {
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
+
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Use the existing yoga image as background */}
@@ -55,7 +59,7 @@ const WellnessSection = () => {
       />
       <div className="absolute inset-0 bg-white/85" />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <div ref={headerRef} className={`text-center mb-12 scroll-animate ${headerVisible ? 'animate' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
             Ancient Wisdom for Modern Minds 🌸
           </h2>
@@ -65,11 +69,12 @@ const WellnessSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {wellnessActivities.map((activity) => (
+        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {wellnessActivities.map((activity, index) => (
             <Card 
               key={activity.id} 
-              className="overflow-hidden hover:shadow-xl group border-2 border-transparent hover:border-purple-300 transition-all duration-300 hover:-translate-y-1 bg-white/95 backdrop-blur"
+              className={`overflow-hidden hover:shadow-xl group border-2 border-transparent hover:border-purple-300 transition-all duration-500 hover-lift bg-white/95 backdrop-blur scroll-zoom ${cardsVisible ? 'animate' : ''}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               {/* Image Header */}
               <div className="relative h-48 overflow-hidden">
@@ -142,8 +147,8 @@ const WellnessSection = () => {
         </div>
 
         {/* Additional Encouragement */}
-        <div className="text-center mt-12 max-w-2xl mx-auto">
-          <div className="bg-white/95 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-200">
+        <div className="text-center mt-12 max-w-2xl mx-auto animate-fade-in animate-delay-500">
+          <div className="bg-white/95 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-200 hover-glow">
             <h3 className="text-xl font-semibold mb-3">
               Remember: Small steps lead to big changes 🌱
             </h3>

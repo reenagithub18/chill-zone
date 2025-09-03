@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Heart, Brain, Users } from "lucide-react";
 import trendingBackground from "@/assets/trending-background.jpg";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const trendingTopics = [
   {
@@ -67,6 +68,9 @@ const trendingTopics = [
 ];
 
 const TrendingTopics = () => {
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
+
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background Image */}
@@ -76,24 +80,25 @@ const TrendingTopics = () => {
       />
       <div className="absolute inset-0 bg-white/80" />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <div ref={headerRef} className={`text-center mb-12 scroll-animate ${headerVisible ? 'animate' : ''}`}>
           <div className="flex items-center justify-center gap-2 mb-4">
-            <TrendingUp className="h-8 w-8 text-purple-600" />
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+            <TrendingUp className="h-8 w-8 text-purple-600 animate-wiggle" />
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent">
               What's Trending in Mental Health 🔥
             </h2>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Real issues Gen-Z is talking about. You're not alone in these struggles - 
             millions are going through the same things ✨
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {trendingTopics.map((topic) => (
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {trendingTopics.map((topic, index) => (
             <Card 
               key={topic.id} 
-              className="hover:shadow-xl cursor-pointer border-2 border-transparent hover:border-purple-300 overflow-hidden group transition-all duration-300 hover:-translate-y-1 bg-white/95 backdrop-blur"
+              className={`hover:shadow-xl cursor-pointer border-2 border-gradient-to-r from-purple-200 to-pink-200 hover:from-purple-400 hover:to-pink-400 overflow-hidden group transition-all duration-500 hover-lift bg-white/95 backdrop-blur scroll-zoom ${cardsVisible ? 'animate' : ''}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className={`h-2 bg-gradient-to-r ${topic.color}`} />
               

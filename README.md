@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# MindSpace 💜 - Mental Health Platform for Gen-Z
 
-## Project info
+A modern, anonymous mental health support platform designed specifically for Gen-Z students. Built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/892a7424-a709-4e4f-9b5f-fc008e5507eb
+## 🌟 Features
 
-## How can I edit this code?
+### 🤖 **AI Mental Health Companion**
+- 24/7 intelligent chatbot with contextual responses
+- Supports anxiety, depression, stress, and general mental health concerns
+- Completely anonymous and private conversations
 
-There are several ways of editing your application.
+### 📊 **Mood Analytics Dashboard**
+- Visual mood tracking with 30-day trends
+- Progress statistics and wellness insights
+- Streak tracking and personalized encouragement
 
-**Use Lovable**
+### 🆘 **Crisis Support System**
+- Real helpline numbers (988, Crisis Text Line)
+- Emergency resources with one-click calling
+- Warning signs education and immediate help access
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/892a7424-a709-4e4f-9b5f-fc008e5507eb) and start prompting.
+### 🎯 **Interactive Features**
+- Mood tracker with personalized suggestions
+- Trending mental health topics for Gen-Z
+- Wellness activities and guided practices
+- Anonymous peer support resources
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Live Demo
 
-**Use your preferred IDE**
+**[View Live Site](https://your-deployment-url.vercel.app)**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Animations**: Custom CSS animations, Intersection Observer
+- **Build Tool**: Vite
+- **Deployment**: Vercel/Netlify ready
 
-Follow these steps:
+## 📱 Key Highlights
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **100% Anonymous** - No sign-ups, no data collection
+- **Mobile-First Design** - Responsive across all devices
+- **Accessibility Focused** - WCAG compliant design
+- **Crisis Prevention** - Real emergency resources integrated
+- **Modern UI/UX** - Glassmorphism, smooth animations
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏆 Hackathon Impact
 
-# Step 3: Install the necessary dependencies.
-npm i
+### **Problem Solved**
+- 42% of Gen-Z students report persistent sadness
+- Mental health stigma prevents seeking help
+- Limited access to affordable mental health resources
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### **Solution Impact**
+- Immediate 24/7 support without barriers
+- Anonymous platform reduces stigma
+- Crisis intervention saves lives
+- Data-driven insights for self-awareness
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/mindspace-mental-health-platform.git
+
+# Navigate to project directory
+cd mindspace-mental-health-platform
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📸 Screenshots
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### AI Chat Interface
+![AI Chat](./screenshots/ai-chat.png)
 
-**Use GitHub Codespaces**
+### Mood Analytics Dashboard
+![Mood Analytics](./screenshots/mood-analytics.png)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Crisis Support System
+![Crisis Support](./screenshots/crisis-support.png)
 
-## What technologies are used for this project?
+## 🤝 Contributing
 
-This project is built with:
+This project was built for [Hackathon Name]. Contributions welcome!
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📄 License
 
-## How can I deploy this project?
+MIT License - feel free to use this project for educational purposes.
 
-Simply open [Lovable](https://lovable.dev/projects/892a7424-a709-4e4f-9b5f-fc008e5507eb) and click on Share -> Publish.
+## 🆘 Crisis Resources
 
-## Can I connect a custom domain to my Lovable project?
+If you're in crisis:
+- **Call 988** - Suicide & Crisis Lifeline
+- **Text HOME to 741741** - Crisis Text Line
+- **Call 911** - Emergency services
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Built with 💜 for mental health awareness**

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Play } from "lucide-react";
 import moodBackground from "@/assets/mood-background.jpg";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 interface MoodSuggestion {
   title: string;
@@ -144,6 +145,8 @@ const moodSuggestions: Record<string, MoodSuggestion[]> = {
 
 const MoodTracker = () => {
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: moodsRef, isIntersecting: moodsVisible } = useIntersectionObserver();
 
   const handleMoodSelect = (moodValue: string) => {
     setSelectedMood(moodValue);
@@ -158,21 +161,22 @@ const MoodTracker = () => {
       />
       <div className="absolute inset-0 bg-white/85" />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+        <div ref={headerRef} className={`text-center mb-12 scroll-animate ${headerVisible ? 'animate' : ''}`}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             How are you feeling today? 💭
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
             Share your mood and get personalized suggestions to support your mental wellness ✨
           </p>
         </div>
 
         {/* Mood Selection */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-8">
-          {moods.map((mood) => (
+        <div ref={moodsRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-8">
+          {moods.map((mood, index) => (
             <Button
               key={mood.value}
-              className={`h-24 flex flex-col gap-2 bg-white hover:bg-purple-50 text-gray-800 border-2 hover:border-purple-300 transition-all duration-300 ${selectedMood === mood.value ? 'ring-2 ring-purple-500 scale-105 bg-purple-100' : ''}`}
+              className={`h-24 flex flex-col gap-2 bg-gradient-to-br from-white to-gray-50 hover:from-purple-50 hover:to-pink-50 text-gray-800 border-2 border-gray-200 hover:border-purple-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover-lift scroll-zoom ${moodsVisible ? 'animate' : ''} ${selectedMood === mood.value ? 'ring-2 ring-purple-500 scale-105 bg-gradient-to-br from-purple-100 to-pink-100' : ''}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
               onClick={() => handleMoodSelect(mood.value)}
             >
               <span className="text-3xl hover:animate-bounce">{mood.emoji}</span>
