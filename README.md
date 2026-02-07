@@ -1,4 +1,4 @@
-# MindSpace 💜 - Mental Health Platform for Gen-Z
+# MindSpace  - Mental Health Platform for Gen-Z
 
 A modern, anonymous mental health support platform designed specifically for Gen-Z students. Built with React, TypeScript, and Tailwind CSS.
 
@@ -100,6 +100,3 @@ If you're in crisis:
 - **Text HOME to 741741** - Crisis Text Line
 - **Call 911** - Emergency services
 
----
-
-**Built with 💜 for mental health awareness**
